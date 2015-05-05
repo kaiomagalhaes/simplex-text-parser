@@ -4,7 +4,7 @@ module Simplex
 			module CoefficientsParser
 
 				def extract_coefficients(str)
-					return [1,1]
+					return nil
 				end
 
 			end
