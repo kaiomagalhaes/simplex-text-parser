@@ -9,15 +9,26 @@ describe Simplex::Text::Parser do
 		obj
 	end
 
-	let(:two_variable_text) do 
-		'max x + y
-		 2x    + y  <= 4
-		 x     + 2y <= 3
-		 x,    y    >= 0'
+	let(:two_variable_text_without_signals) do 
+		'max 1x + 1y
+		 2x    + 1y  <= 4
+		 1x     + 2y <= 3
+		 1x,    1y    >= 0'
 	end
 
-	let(:two_variable_text_parsed) do
-		parser.parse(two_variable_text)
+	let(:two_variable_text_with_signals) do 
+		'max -1x + 1y
+		 -2x    + +1y  <= 4
+		 -x     + -2y <= +3
+		 1x,    1y    >= 0'
+	end
+
+	let(:two_variable_text_without_signals_parsed) do
+		parser.parse(two_variable_text_without_signals)
+	end
+
+	let(:two_variable_text_with_signals_parsed) do
+		parser.parse(two_variable_text_with_signals)
 	end
 
 	it 'has a version number' do
@@ -26,18 +37,33 @@ describe Simplex::Text::Parser do
 
 	describe 'parse with two variables' do
 
-		it 'parse coefficients' do
-			expect(two_variable_text_parsed[:coefficients]).to eql([1,1])			
+		describe 'parse coefficients' do
+
+			it 'parse coefficients without signal' do
+				expect(two_variable_text_without_signals_parsed[:coefficients]).to eql([1,1])			
+			end
+
+			it 'parse coefficients with signal' do
+				expect(two_variable_text_without_signals_parsed[:coefficients]).to eql([-1,1])			
+			end
+
 		end
 
-		it 'parse matrix' do
-			expect(two_variable_text_parsed[:matrix]).to eql([[2,1],[1,2]])
+		describe 'parse matrix' do
+
+			it 'parse matrix' do
+				expect(two_variable_text_without_signals_parsed[:matrix]).to eql([[2,1],[1,2]])
+			end
+
 		end
 
-		it 'parse rhs' do
-			expect(two_variable_text_parsed[:rhs]).to eql([4,3])
+		describe 'parse rhs' do
+			
+			it 'parse rhs' do
+				expect(two_variable_text_without_signals_parsed[:rhs]).to eql([4,3])
+			end
+
 		end
-		
 	end
 
 end

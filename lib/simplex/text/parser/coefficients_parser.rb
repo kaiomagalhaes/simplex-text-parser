@@ -4,9 +4,13 @@ module Simplex
 			module CoefficientsParser
 
 				def extract_coefficients(str)
-					return nil
+					line = find_line str
+					line.scan(/\d/).map(&:to_i)
 				end
 
+				def find_line(str)
+					str.lines.first
+				end
 			end
 		end
 	end
