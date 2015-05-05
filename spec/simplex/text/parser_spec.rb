@@ -44,7 +44,7 @@ describe Simplex::Text::Parser do
 			end
 
 			it 'parse coefficients with signal' do
-				expect(two_variable_text_without_signals_parsed[:coefficients]).to eql([-1,1])			
+				expect(two_variable_text_with_signals_parsed[:coefficients]).to eql([-1,1])			
 			end
 
 		end

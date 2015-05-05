@@ -5,7 +5,7 @@ module Simplex
 
 				def extract_coefficients(str)
 					line = find_line str
-					line.scan(/\d/).map(&:to_i)
+					line.scan(/[^\s]?\d/).map(&:to_i)
 				end
 
 				def find_line(str)

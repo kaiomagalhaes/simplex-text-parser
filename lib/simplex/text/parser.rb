@@ -19,7 +19,7 @@ module Simplex
 			end
 
 			def findRhs
-				[4,3]
+				nil
 			end
 
 		end
