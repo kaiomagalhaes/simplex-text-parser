@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = "simplex-text-parser"
   spec.version       = Simplex::Text::Parser::VERSION
   spec.authors       = ["Kaio Magalhães"]
-  spec.email         = ["kaio.zeroglosa@gmail.com"]
+  spec.email         = ["contato@kaiomagalhaes.com.br"]
 
   spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
   spec.description   = %q{TODO: Write a longer description or delete this line.}
@@ -29,4 +29,5 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.9"
   spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency "rspec"
 end
