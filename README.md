@@ -1,3 +1,5 @@
+[![Build Status](https://semaphoreci.com/api/v1/projects/9c099313-6d07-4a4b-84dd-3c2d567556fb/416103/badge.svg)](https://semaphoreci.com/kaiomagalhaes/simplex-text-parser)      
+
 # Simplex::Text::Parser
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/simplex/text/parser`. To experiment with that code, run `bin/console` for an interactive prompt.
