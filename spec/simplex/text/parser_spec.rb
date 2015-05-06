@@ -18,9 +18,9 @@ describe Simplex::Text::Parser do
 
 	let(:two_variable_text_with_signals) do 
 		'max -1x + 1y
-		 -2x    + +1y  <= 4
-		 -x     + -2y <= +3
-		 1x,    1y    >= 0'
+		 -2x    + +1y  <= +4
+		 -x     + -2y <= -3
+		 -1x,    1y    >= 0'
 	end
 
 	let(:two_variable_text_without_signals_parsed) do
@@ -59,8 +59,12 @@ describe Simplex::Text::Parser do
 
 		describe 'parse rhs' do
 			
-			it 'parse rhs' do
+			it 'parse rhs without signal' do
 				expect(two_variable_text_without_signals_parsed[:rhs]).to eql([4,3])
+			end
+
+			it 'parse rhs with signal' do
+				expect(two_variable_text_with_signals_parsed[:rhs]).to eql([4,3])
 			end
 
 		end
