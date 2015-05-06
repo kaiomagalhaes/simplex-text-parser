@@ -81,7 +81,7 @@ describe Simplex::Text::Parser do
 		it 'parse with tree variables' do
 
 			text = 'min -1x - 2y + 3z 
-			-2x  + 1y + -2y <= + 4
+			-2x  + 1y + -2z <= + 4
 			-1x  +2y - 2z <= -3
 			-3x     +5y - 4z <= - 3
 			-5x,    1y  , 5z  >= 0'
@@ -89,6 +89,29 @@ describe Simplex::Text::Parser do
 			result_expected = {
 				coefficients:[-1,-2,3],
 				matrix:[[-2,1,-2],[-1,2,-2],[-3,5,-4]],
+				rhs:[4,-3,-3]
+			}
+			result = parser.parse(text)
+			expect(result_expected).to eql(result)
+
+		end
+
+	end
+
+	describe 'parse with variables missing' do
+
+
+		it 'variables missing in matrix' do
+
+			text = 'min -1x - 2y + 3z 
+				-2x  + 1y <= + 4
+			-1x - 2z <= -3
+			-3x     +5y - 4z <= - 3
+			-5x,    1y  , 5z  >= 0'
+
+			result_expected = {
+				coefficients:[-1,-2,3],
+				matrix:[[-2,1,0],[-1,0,-2],[-3,5,-4]],
 				rhs:[4,-3,-3]
 			}
 			result = parser.parse(text)
