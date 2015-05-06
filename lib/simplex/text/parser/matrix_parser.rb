@@ -17,7 +17,7 @@ module Simplex
 				
 				def find_values(line)
 					line = line.scan(/.*(?==)/).first
-					line.scan(/[^\s]?\d/)
+					line.scan(/[^\s\w]?\s*\d/).map{|line| line.gsub(/\s/,'')}
 				end
 			end
 		end
