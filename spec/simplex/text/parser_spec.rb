@@ -87,7 +87,7 @@ describe Simplex::Text::Parser do
 			-5x,    1y  , 5z  >= 0'
 
 			result_expected = {
-				coefficients:[-1,2,3],
+				coefficients:[-1,-2,3],
 				matrix:[[-2,1,2],[-1,2,-2],[-3,5,-4]],
 				rhs:[4,-3,-3]
 			}
