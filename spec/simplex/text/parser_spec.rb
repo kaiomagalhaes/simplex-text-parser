@@ -81,9 +81,9 @@ describe Simplex::Text::Parser do
 		it 'parse with tree variables' do
 
 			text = 'min -1x - 2y + 3z 
-			-2x  + 1y + -2y <= +4
+			-2x  + 1y + -2y <= + 4
 			-1x  +2y - 2z <= -3
-			-3x     +5y - 4z <= -3
+			-3x     +5y - 4z <= - 3
 			-5x,    1y  , 5z  >= 0'
 
 			result_expected = {
