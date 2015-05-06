@@ -5,12 +5,9 @@ module Simplex
 
 				def extract_matrix(str)
 					lines = find_matrix(str)
-					matrix = lines.map{ |line| 
-						a = find_values(line).flatten.map(&:to_i)
-						p a
-						a
+					lines.map{ |line| 
+						find_values(line).flatten.map(&:to_i)
 					}
-					matrix
 				end
 				
 				private
@@ -19,10 +16,8 @@ module Simplex
 				end
 				
 				def find_values(line)
-					puts line
-					a = line.scan(/([^\s]?(\d)).*=/)
-					p a
-					a
+					line = line.scan(/.*(?==)/).first
+					line.scan(/[^\s]?\d/)
 				end
 			end
 		end
