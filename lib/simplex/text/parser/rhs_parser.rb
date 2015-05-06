@@ -9,8 +9,9 @@ module Simplex
 					lineNumbers.map(&:to_i)
 				end
 
+				private
 				def find_lines(str)
-					str.lines.slice(1..-2)
+					str.lines[1..-2]
 				end
 			end
 		end

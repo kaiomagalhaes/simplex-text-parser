@@ -19,7 +19,7 @@ describe Simplex::Text::Parser do
 	let(:two_variable_text_with_signals) do 
 		'max -1x + 1y
 		 -2x    + +1y  <= +4
-		 -x     + -2y <= -3
+		 -1x     + -2y <= -3
 		 -1x,    1y    >= 0'
 	end
 

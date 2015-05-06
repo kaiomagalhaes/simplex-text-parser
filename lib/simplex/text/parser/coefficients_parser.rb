@@ -7,7 +7,8 @@ module Simplex
 					line = find_line str
 					line.scan(/[^\s]?\d/).map(&:to_i)
 				end
-
+				
+				private
 				def find_line(str)
 					str.lines.first
 				end
