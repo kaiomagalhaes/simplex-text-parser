@@ -5,7 +5,7 @@ module Simplex
 
 				def extract_rhs(str)
 					lines = find_lines str
-					lineNumbers = lines.map{ |linha| linha.scan(/[^\s]?(\d)\s*$/).first }.flatten
+					lineNumbers = lines.map{|linha|linha.scan(/([^\s]?\d)\n*$/).first}.flatten
 					lineNumbers.map(&:to_i)
 				end
 
