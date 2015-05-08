@@ -1,4 +1,5 @@
 [![Build Status](https://semaphoreci.com/api/v1/projects/9c099313-6d07-4a4b-84dd-3c2d567556fb/416103/badge.svg)](https://semaphoreci.com/kaiomagalhaes/simplex-text-parser)      
+[![Gem Version](https://badge.fury.io/rb/simplex-text-parser.svg)](http://badge.fury.io/rb/simplex-text-parser)
 
 # Simplex::Text::Parser
 
