@@ -3,9 +3,7 @@
 
 # Simplex::Text::Parser
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/simplex/text/parser`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+The idea of this gem is to parse the input of the user in a structure that can be used in another gem( place de gem here ) that wil calculate the Simplex algorithm.
 
 ## Installation
 
